@@ -15,13 +15,15 @@ class CreateEmailsTable extends Migration
     {
         Schema::create('emails', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('sender');
-            $table->bigInteger('receiver');
+            $table->bigInteger('sender_id');
+            $table->bigInteger('receiver_id');
             $table->string('subject');
             $table->string('message');
-            $table->bigInteger('status');
+            $table->bigInteger('status_id');
             $table->bigInteger('thread_id');
             $table->timestamps();
+
+            
         });
     }
 
