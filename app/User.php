@@ -37,7 +37,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function emails(){
+    function emails_sender(){
         return $this->hasMany('App\Email', 'sender_id');
+    }
+
+    function emails_reciever(){
+        return $this->hasMany('App\Email', 'receiver_id');
+    }
+
+    function chats_sender(){
+        return $this->hasMany('App\Chats', 'sender_id');
+    }
+
+    function transactions_sender(){
+        return $this->hasMany('App\Transactions', 'sender_id');
     }
 }

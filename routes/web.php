@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Email;
+use App\Http\Controllers\EmailController;
+
+Route::get('/', 'EmailController@index');

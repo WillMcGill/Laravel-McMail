@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Email;
+use App\User;
 use Illuminate\Http\Request;
 
 class EmailController extends Controller
@@ -14,7 +15,7 @@ class EmailController extends Controller
      */
     public function index()
     {
-        //
+        dd(User::first());
     }
 
     /**
