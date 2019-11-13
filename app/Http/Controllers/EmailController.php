@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Email;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
+use App\Http\Resources\EmailCollection;
 
 class EmailController extends Controller
 {
@@ -15,7 +17,8 @@ class EmailController extends Controller
      */
     public function index()
     {
-        dd(User::first());
+        $userId = Auth::id();
+        return new EmailCollection(Email::all()->where('sender_id' , $userId));
     }
 
     /**

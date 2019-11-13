@@ -41,7 +41,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Email', 'sender_id');
     }
 
-    function emails_reciever(){
+    function emails_receiver(){
         return $this->hasMany('App\Email', 'receiver_id');
     }
 
