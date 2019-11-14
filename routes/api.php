@@ -23,4 +23,4 @@ Route::middleware('auth:api')->group(function(){
     Route::get('/logout','AuthenticationController@logout')->name('logout');
 });
 
-Route::get('/', 'EmailController@index');
+// Route::get('/', 'EmailController@index');

@@ -14,7 +14,8 @@
 use App\Email;
 use App\Http\Controllers\EmailController;
 
-Route::get('/', 'EmailController@index');
+//Route::get('/', 'EmailController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 
