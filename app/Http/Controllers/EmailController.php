@@ -19,6 +19,7 @@ class EmailController extends Controller
     {
         $userId = Auth::id();
         return new EmailCollection(Email::all()->where('sender_id' , $userId));
+        
     }
 
     /**
