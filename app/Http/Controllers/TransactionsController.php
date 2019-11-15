@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Email;
-use App\User;
-use Auth;
+use App\Transactions;
 use Illuminate\Http\Request;
-use App\Http\Resources\EmailCollection;
 
-class EmailController extends Controller
+class TransactionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +14,7 @@ class EmailController extends Controller
      */
     public function index()
     {
-        $userId = Auth::id();
-        return new EmailCollection(Email::all()->where('sender_id' , $userId));
-        
+        //
     }
 
     /**
@@ -46,10 +41,10 @@ class EmailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Email  $email
+     * @param  \App\Transactions  $transactions
      * @return \Illuminate\Http\Response
      */
-    public function show(Email $email)
+    public function show(Transactions $transactions)
     {
         //
     }
@@ -57,10 +52,10 @@ class EmailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Email  $email
+     * @param  \App\Transactions  $transactions
      * @return \Illuminate\Http\Response
      */
-    public function edit(Email $email)
+    public function edit(Transactions $transactions)
     {
         //
     }
@@ -69,10 +64,10 @@ class EmailController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Email  $email
+     * @param  \App\Transactions  $transactions
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Email $email)
+    public function update(Request $request, Transactions $transactions)
     {
         //
     }
@@ -80,10 +75,10 @@ class EmailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Email  $email
+     * @param  \App\Transactions  $transactions
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Email $email)
+    public function destroy(Transactions $transactions)
     {
         //
     }

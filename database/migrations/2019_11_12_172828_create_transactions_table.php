@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmailsTable extends Migration
+class CreateTransactionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateEmailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('emails', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('sender_id');
-            $table->bigInteger('receiver_id');
-            $table->string('subject');
-            $table->string('message');
-            $table->bigInteger('status_id');
-            $table->bigInteger('thread_id');
+            $table->bigInteger('sender');
+            $table->bigInteger('receiver');
+            $table->bigInteger('message_id');
+            $table->boolean('read');
             $table->timestamps();
-
-            
         });
     }
 
@@ -34,6 +30,6 @@ class CreateEmailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emails');
+        Schema::dropIfExists('transactions');
     }
 }
