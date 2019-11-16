@@ -7,9 +7,6 @@ use App\Http\Controllers\Controller;
 use Lcobucci\JWT\Parser;
 use App\User;
 
-
-
-
 class AuthenticationController extends Controller
 {
     public function login(Request $request) {
